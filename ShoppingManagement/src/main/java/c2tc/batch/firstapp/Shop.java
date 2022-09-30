@@ -6,10 +6,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * 
+ * @author Bheemaraya
+ *
+ */
+
+
 @Entity
 public class Shop {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="shop_Id", nullable = false, unique = true)
-
 	private Integer shop_Id ;
 	private String shop_Category; 
 	private Integer shop_EmployeeID; 
@@ -34,30 +42,29 @@ public class Shop {
 		super();
 	}
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public Integer getShopId() {
+	
+	public Integer getShop_Id() {
 		return shop_Id;
 	}
-	public void setShopId(Integer shop_Id) {
+	public void setShop_Id(Integer shop_Id) {
 		this.shop_Id = shop_Id;
 	}
-	public String getShopCategory() {
+	public String getShop_Category() {
 		return shop_Category;
 	}
-	public void setShopCategory(String shop_Category) {
+	public void setShop_Category(String shop_Category) {
 		this.shop_Category = shop_Category;
 	}
-	public Integer getShopEmployeeID() {
+	public Integer getShop_EmployeeID() {
 		return shop_EmployeeID;
 	}
-	public void setShopEmployeeID(Integer shop_EmployeeID) {
+	public void setShop_EmployeeID(Integer shop_EmployeeID) {
 		this.shop_EmployeeID = shop_EmployeeID;
 	}
-	public String getShopName() {
+	public String getShop_Name() {
 		return shop_Name;
 	}
-	public void setShopName(String shop_Name) {
+	public void setShop_Name(String shop_Name) {
 		this.shop_Name = shop_Name;
 	}
 	public String getCustomers() {
@@ -66,29 +73,32 @@ public class Shop {
 	public void setCustomers(String customers) {
 		this.customers = customers;
 	}
-	public String getShopStatus() {
+	public String getShop_Status() {
 		return shop_Status;
 	}
-	public void setShopStatus(String shop_Status) {
+	public void setShop_Status(String shop_Status) {
 		this.shop_Status = shop_Status;
 	}
-	public String getShopOwner() {
+	public String getShop_Owner() {
 		return shop_Owner;
 	}
-	public void setShopOwner(String shop_Owner) {
+	public void setShop_Owner(String shop_Owner) {
 		this.shop_Owner = shop_Owner;
 	}
-	public String getLeaseStatus() {
+	public String getLease_Status() {
 		return lease_Status;
 	}
-	public void setLeaseStatus(String lease_Status) {
+	public void setLease_Status(String lease_Status) {
 		this.lease_Status = lease_Status;
 	}
 	@Override
 	public String toString() {
-		return "Shop [shopId=" + shop_Id + ", shopCategory=" + shop_Category + ", shopEmployeeID=" + shop_EmployeeID
-				+ ", shopName=" + shop_Name + ", customers=" + customers + ", shopStatus=" + shop_Status + ", shopOwner="
-				+ shop_Owner + ", leaseStatus=" + lease_Status + "]";
+		return "Shop [shop_Id=" + shop_Id + ", shop_Category=" + shop_Category + ", shop_EmployeeID=" + shop_EmployeeID
+				+ ", shop_Name=" + shop_Name + ", customers=" + customers + ", shop_Status=" + shop_Status
+				+ ", shop_Owner=" + shop_Owner + ", lease_Status=" + lease_Status + "]";
 	}
+	
+	
+	
 
 }
